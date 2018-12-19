@@ -1,0 +1,33 @@
+operationmed:
+    pattern:  /
+    defaults: { _controller: "CabinetMedicalBundle:operationmed:index" }
+
+operationmed_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "CabinetMedicalBundle:operationmed:show" }
+
+operationmed_new:
+    pattern:  /new
+    defaults: { _controller: "CabinetMedicalBundle:operationmed:new" }
+
+operationmed_create:
+    pattern:  /create
+    defaults: { _controller: "CabinetMedicalBundle:operationmed:create" }
+    requirements: { _method: post }
+
+operationmed_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "CabinetMedicalBundle:operationmed:edit" }
+
+operationmed_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "CabinetMedicalBundle:operationmed:update" }
+    requirements: { _method: post }
+
+operationmed_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "CabinetMedicalBundle:operationmed:delete" }
+    requirements: { _method: post }
+operationmed_deletee:
+    pattern:  /{id}/deletee
+    defaults: { _controller: "CabinetMedicalBundle:operationmed:deletee" }

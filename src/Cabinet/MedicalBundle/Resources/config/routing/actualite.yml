@@ -1,0 +1,33 @@
+actualite:
+    pattern:  /
+    defaults: { _controller: "CabinetMedicalBundle:actualite:index" }
+
+actualite_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "CabinetMedicalBundle:actualite:show" }
+
+actualite_new:
+    pattern:  /admin/new
+    defaults: { _controller: "CabinetMedicalBundle:actualite:new" }
+
+actualite_create:
+    pattern:  /create
+    defaults: { _controller: "CabinetMedicalBundle:actualite:create" }
+    requirements: { _method: post }
+
+actualite_edit:
+    pattern:  admin/{id}/edit
+    defaults: { _controller: "CabinetMedicalBundle:actualite:edit" }
+
+actualite_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "CabinetMedicalBundle:actualite:update" }
+    requirements: { _method: post }
+
+actualite_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "CabinetMedicalBundle:actualite:delete" }
+    requirements: { _method: post }
+actualite_deleteee:
+    pattern:  /{id}/deletee
+    defaults: { _controller: "CabinetMedicalBundle:actualite:deletee" }

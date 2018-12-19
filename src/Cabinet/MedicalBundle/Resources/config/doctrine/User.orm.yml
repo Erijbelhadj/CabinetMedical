@@ -1,0 +1,67 @@
+Cabinet\MedicalBundle\Entity\User:
+    type: entity
+    table: null
+    repositoryClass: Cabinet\MedicalBundle\Entity\UserRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        nom:
+            type: string
+            length: 255
+        prenom:
+            type: string
+            length: 255
+        cin:
+            type: string
+            length: 255
+        phone:
+            type: string
+            length: 255
+        poste:
+            type: string
+            length: 255    
+        profilePicture:
+            type: string
+            length: 255
+            nullable: true
+    oneToOne:
+     pat:
+      targetEntity: patient
+      mappedBy: us
+     med:
+      targetEntity: medecin
+      mappedBy: usm
+    consulu:
+      targetEntity: consultation
+      mappedBy: user   
+    oneToMany:
+         actualite:
+           targetEntity: actualite
+           mappedBy: user
+         cabinet:
+           targetEntity: cabinet
+           mappedBy: user2
+         contact:
+           targetEntity: contact
+           mappedBy: user3
+         rdvu:
+           targetEntity: rdv
+           mappedBy: user4  
+         opmeduser:
+           targetEntity: operationmed
+           mappedBy: user
+         rigimuser:
+           targetEntity: rigime
+           mappedBy: user
+         secuser:
+           targetEntity: securite
+           mappedBy: user  
+    lifecycleCallbacks:
+     prePersist: [ preUpload ]
+     preUpdate: [ preUpload ]
+     postPersist: [ upload  ]
+     postUpdate: [ upload  ]
+     postRemove: [ removeUpload  ]

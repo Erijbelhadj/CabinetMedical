@@ -1,0 +1,40 @@
+Cabinet\MedicalBundle\Entity\operationmed:
+    type: entity
+    table: null
+    repositoryClass: Cabinet\MedicalBundle\Entity\operationmedRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        date:
+            type: datetime
+        montant:
+            type: float
+    manyToOne:
+         pat:
+           targetEntity: patient
+           inversedBy: opmed
+           joinColumn:
+            name: patient_id
+            referencedColumnName: id
+         user:
+           targetEntity: User
+           inversedBy: opmeduser
+           joinColumn:
+            name: user_id
+            referencedColumnName: id
+         cabinet:
+           targetEntity: cabinet
+           inversedBy: opmedcab
+           joinColumn:
+            name: cabinet_id
+            referencedColumnName: id   
+         med:
+           targetEntity: medecin
+           inversedBy: opmedd
+           joinColumn:
+            name: medecin_id
+            referencedColumnName: id    
+    lifecycleCallbacks: {  }

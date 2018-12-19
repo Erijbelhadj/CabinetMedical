@@ -1,0 +1,45 @@
+Cabinet\MedicalBundle\Entity\rdv:
+    type: entity
+    table: null
+    repositoryClass: Cabinet\MedicalBundle\Entity\rdvRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        titre:
+            type: string
+            length: 255
+        date:
+            type: datetime
+        num:
+            type: integer
+        active:
+            type: integer     
+    manyToOne:
+         med:
+           targetEntity: medecin
+           inversedBy: rdv
+           joinColumn:
+            name: med_id
+            referencedColumnName: id
+         user4:
+           targetEntity: User
+           inversedBy: rdvu
+           joinColumn:
+            name: user_id
+            referencedColumnName: id       
+         patient:
+           targetEntity: patient
+           inversedBy: rdve
+           joinColumn:
+            name: pat_id
+            referencedColumnName: id        
+         cabinet:
+           targetEntity: cabinet
+           inversedBy: rdvc
+           joinColumn:
+            name: cab_id
+            referencedColumnName: id
+    lifecycleCallbacks: {  }

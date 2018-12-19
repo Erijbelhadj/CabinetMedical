@@ -1,0 +1,71 @@
+Cabinet\MedicalBundle\Entity\cabinet:
+    type: entity
+    table: null
+    repositoryClass: Cabinet\MedicalBundle\Entity\cabinetRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        nom:
+            type: string
+            length: 255
+        adresse:
+            type: string
+            length: 255
+        email:
+            type: string
+            length: 255
+        phone:
+            type: string
+            length: 255
+        phonem:
+            type: string
+            length: 255
+        fax:
+            type: string
+            length: 255
+        image:
+            type: string
+            length: 255     
+    manyToOne:
+         user2:
+           targetEntity: User
+           inversedBy: cabinet
+           joinColumn:
+            name: User_id
+            referencedColumnName: id
+         securite:
+           targetEntity: securite
+           inversedBy: cabin
+           joinColumn:
+            name: sec_id
+            referencedColumnName: id    
+    manyToMany:
+     medecin:
+      targetEntity: medecin
+      joinTable:
+        name: medecin_cabinet
+        joinColumns:
+          cabinet_id:
+            referencedColumnName: id
+        inverseJoinColumns:
+          medecin_id:
+            referencedColumnName: id
+    oneToMany:         
+     rdvc:
+           targetEntity: rdv
+           mappedBy: cabinet
+     consultationcab:
+           targetEntity: consultation
+           mappedBy: cabinetc       
+     opmedcab:
+           targetEntity: Operationmed
+           mappedBy: cabinet      
+    lifecycleCallbacks:
+     prePersist: [ preUpload ]
+     preUpdate: [ preUpload ]
+     postPersist: [ upload  ]
+     postUpdate: [ upload  ]
+     postRemove: [ removeUpload  ]

@@ -1,0 +1,131 @@
+
+{% extends "CabinetMedicalBundle::adminTemplate.html.twig" %}
+
+{% block content %}
+
+<link href="{{asset('bundles/CabinetMedical/admin/plugins/jquery-datatable/css/jquery.dataTables.css')}}" rel="stylesheet" type="text/css"/>
+<link href="{{asset('bundles/CabinetMedical/admin/plugins/boostrap-checkbox/css/bootstrap-checkbox.css')}}" rel="stylesheet" type="text/css" media="screen"/>
+<link href="{{asset('bundles/CabinetMedical/admin/plugins/datatables-responsive/css/datatables.responsive.css')}}" rel="stylesheet" type="text/css" media="screen"/>
+<script src="{{asset('bundles/CabinetMedical/admin/plugins/jquery-datatable/js/jquery.dataTables.min.js')}}" type="text/javascript" ></script>
+<script src="{{asset('bundles/CabinetMedical/admin/plugins/jquery-datatable/extra/js/TableTools.min.js')}}" type="text/javascript" ></script>
+<script type="text/javascript" src="{{asset('bundles/CabinetMedical/admin/plugins/datatables-responsive/js/datatables.responsive.js')}}"></script>
+<script type="text/javascript" src="{{asset('bundles/CabinetMedical/admin/plugins/datatables-responsive/js/lodash.min.js')}}"></script>
+
+<script src="{{asset('bundles/CabinetMedical/admin/js/datatables.js')}}" type="text/javascript"></script>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="grid simple">
+            <div class="grid-title no-border">
+              <h4>Détail <span class="semi-bold">Rendez_vous</span></h4>
+              <div class="tools"> <a href="javascript:;" class="collapse"></a> <a href="#grid-config" data-toggle="modal" class="config"></a> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
+            </div>
+            <div class="grid-body no-border">    
+                <a href="{{ path('rdv') }}" data-color="rgb(255, 255, 255)" data-color-format="hex" id="cp4" class="btn btn-primary my-colorpicker-control" href="#" data-colorpicker-guid="1"><i class="fa fa-reply-all">  Retourner à la liste</i></a>
+               <a href="{{ path('rdv_edit', { 'id': entity.id }) }}" data-color="rgb(255, 255, 255)" data-color-format="hex" id="cp4" class="btn btn-warning my-colorpicker-control" href="#" data-colorpicker-guid="1"><i class="fa fa-edit"> Modifier le rendez vous</i></a>
+                     <a href="{{ path('rd_deletee', { 'id': entity.id }) }}" data-color="rgb(255, 255, 255)" data-color-format="hex" id="cp4" class="btn btn-danger my-colorpicker-control" href="#" data-colorpicker-guid="1"><i class="fa fa-times fa fa-white"> Supprimer</i></a>
+                <br><br>  
+                <br>
+                <div class="form-group">
+                  <label class="form-label"></label>
+                  <h5  class="semi-bold text-black">Titre:</h5>
+                  <h4><i>{{ entity.titre }} </i></h4>
+                   <label class="form-label"></label>
+                  <h5  class="semi-bold text-black">Numéro:</h5>
+                  <h4><i>{{ entity.num }} </i></h4>
+                   
+              {#<h5 class="semi-bold text-black">Ajouter par:</h5>
+              <strong>{{ entity.user }}</strong><br>#}
+               <h5 class="text-right text-black">Date de rendez_vous</h5>
+            <h5 class="text-right semi-bold text-black">{{ entity.date|date('Y-m-d H:i:s') }} </h5>
+                </div>
+                
+               
+           
+                <div class="grid-title no-border">
+                <h4>Détail <span class="semi-bold">Médecins</span></h4>
+              
+            </div>
+            <div class="grid-body no-border">
+
+                <p><img style= "border: 3px solid; color: #0aa699;" src="{{ asset("uploads/entities/") ~ entity.med.usm.profilePicture  }}"   alt="" width="400" height="190"></p>
+                <br
+                  
+                       
+                     
+                                </div>
+ {{ entity.med.usm.nom}} {{ entity.med.usm.prenom}} qui a comme Spécialité {{ entity.med.specialite}} et le numéro de télephone {{ entity.med.usm.phone}},</i></a><br>
+
+                <div class="clearfix"></div>
+            </div>
+                
+             <div class="clearfix"></div><br><br>
+                        <a data-color="rgb(255, 255, 255)" data-color-format="hex" id="cp4" class="btn btn-primary my-colorpicker-control" href="#" data-colorpicker-guid="1">{{ entity.titre }} Ajouté par </a> <br>
+                        <br>
+                        <div class="clearfix"></div>   
+          </div>
+        </div>
+         
+ 
+        
+       <div class="clearfix"></div>
+            </div>
+         
+        
+         <div class="col-md-6">
+        <div class="grid simple">
+            <div class="grid-title no-border">
+                <h4>Informations <span class="semi-bold">Patient</span></h4>
+                <div class="tools"> <a href="javascript:;" class="collapse"></a> <a href="#grid-config" data-toggle="modal" class="config"></a> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
+            </div>
+            <div class="grid-body no-border">
+
+                <p><img style= "border: 3px solid; color: #0aa699;" src="{{ asset("uploads/entities/") ~ entity.patient.us.profilePicture  }}"   alt="" width="460" height="190"></p>
+                <br
+                    
+                     
+                        
+                                </div>
+ {{ entity.patient.us.nom}} {{ entity.patient.us.prenom}} qui a le code cnam {{ entity.patient.codecnam}}, l'allergie {{ entity.patient.allergie|raw}}, l'antecedant {{ entity.patient.antecedent|raw}} et l'handicape {{ entity.patient.handicape|raw}}
+
+               
+                </div>
+                <div class="grid-title no-border">
+                <h4>Détail <span class="semi-bold">Cabinet</span></h4>
+              
+            </div>  
+            <div class="grid-body no-border">
+
+                <p><img style= "border: 3px solid; color: #0aa699;" src="{{asset('bundles/cabinetmedical/images/cabinet.jpg')}}"   alt="" width="400" height="190"></p>
+                <br
+                  
+                       
+                     
+                                </div>
+ <label class="form-label"></label>
+                  <h5  class="semi-bold text-black">Nom:</h5>
+                  <h4><i>{{ entity.cabinet.nom }} </i></h4>
+                   <label class="form-label"></label>
+                  <h5  class="semi-bold text-black">Adresse:</h5>
+                  <h4><i>{{ entity.cabinet.adresse }} </i></h4>
+                   <h5  class="semi-bold text-black">Email:</h5>
+                  <h4><i>{{ entity.cabinet.email }} </i></h4>
+                   <h5  class="semi-bold text-black">Télephone:</h5>
+                  <h4><i>{{ entity.cabinet.phone }} </i></h4>
+                  <h5  class="semi-bold text-black">Télephone Mobile:</h5>
+                  <h4><i>{{ entity.cabinet.phonem }} </i></h4>
+                  <h5  class="semi-bold text-black">Fax:</h5>
+                  <h4><i>{{ entity.cabinet.fax }} </i></h4>
+                
+                    </div>
+            </div>
+            
+       
+          </div>
+
+
+  </div>
+        
+        
+
+ {% endblock content %}

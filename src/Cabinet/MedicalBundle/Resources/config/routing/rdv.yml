@@ -1,0 +1,50 @@
+rdv:
+    pattern:  /
+    defaults: { _controller: "CabinetMedicalBundle:rdv:index" }
+liste:
+    pattern:  /liste
+    defaults: { _controller: "CabinetMedicalBundle:rdv:liste" }    
+aganda:
+    pattern:  /agenda
+    defaults: { _controller: "CabinetMedicalBundle:rdv:agenda" } 
+    
+
+rdv_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "CabinetMedicalBundle:rdv:show" }
+rdv_activ:
+    pattern:  /{id}/active
+    defaults: { _controller: "CabinetMedicalBundle:rdv:active" }    
+rdv_desactiv:
+    pattern:  /{id}/desactive
+    defaults: { _controller: "CabinetMedicalBundle:rdv:desactive" }        
+addrdv:
+    pattern:  /addrdv
+    defaults: { _controller: "CabinetMedicalBundle:rdv:addrdv" }
+rdv_new:
+    pattern:  /new
+    defaults: { _controller: "CabinetMedicalBundle:rdv:new" }
+rdv_patient:
+    pattern:  /newrdv
+    defaults: { _controller: "CabinetMedicalBundle:rdv:newrdv" }
+rdv_create:
+    pattern:  /create
+    defaults: { _controller: "CabinetMedicalBundle:rdv:create" }
+    requirements: { _method: post }
+
+rdv_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "CabinetMedicalBundle:rdv:edit" }
+
+rdv_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "CabinetMedicalBundle:rdv:update" }
+    requirements: { _method: post }
+
+rdv_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "CabinetMedicalBundle:rdv:delete" }
+    requirements: { _method: post }
+rd_deletee:
+    pattern:  /{id}/deletee
+    defaults: { _controller: "CabinetMedicalBundle:rdv:deletee" }

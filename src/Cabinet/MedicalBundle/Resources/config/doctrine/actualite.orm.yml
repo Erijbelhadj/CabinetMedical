@@ -1,0 +1,34 @@
+Cabinet\MedicalBundle\Entity\actualite:
+    type: entity
+    table: null
+    repositoryClass: Cabinet\MedicalBundle\Entity\actualiteRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        titre:
+            type: string
+            length: 255
+        text:
+            type: text
+        date:
+            type: datetime
+        image:
+            type: string
+            length: 255
+    manyToOne:
+         user:
+           targetEntity: User
+           inversedBy: actualite
+           joinColumn:
+            name: User_id
+            referencedColumnName: id       
+    lifecycleCallbacks:
+     prePersist: [ preUpload ]
+     preUpdate: [ preUpload ]
+     postPersist: [ upload  ]
+     postUpdate: [ upload  ]
+     postRemove: [ removeUpload  ]
+

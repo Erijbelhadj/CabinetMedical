@@ -1,0 +1,139 @@
+{% extends "CabinetMedicalBundle::adminTemplate.html.twig" %}
+
+
+ {% block content %}
+
+<link href="{{asset('bundles/cabinetmedical/admin/plugins/jquery-datatable/css/jquery.dataTables.css')}}" rel="stylesheet" type="text/css"/>
+<link href="{{asset('bundles/cabinetmedical/admin/plugins/boostrap-checkbox/css/bootstrap-checkbox.css')}}" rel="stylesheet" type="text/css" media="screen"/>
+<link href="{{asset('bundles/cabinetmedical/admin/plugins/datatables-responsive/css/datatables.responsive.css')}}" rel="stylesheet" type="text/css" media="screen"/>
+<script src="{{asset('bundles/cabinetmedical/admin/plugins/jquery-datatable/js/jquery.dataTables.min.js')}}" type="text/javascript" ></script>
+<script src="{{asset('bundles/cabinetmedical/admin/plugins/jquery-datatable/extra/js/TableTools.min.js')}}" type="text/javascript" ></script>
+<script type="text/javascript" src="{{asset('bundles/cabinetmedical/admin/plugins/datatables-responsive/js/datatables.responsive.js')}}"></script>
+<script type="text/javascript" src="{{asset('bundles/cabinetmedical/admin/plugins/datatables-responsive/js/lodash.min.js')}}"></script>
+
+<script src="{{asset('bundles/cabinetmedical/admin/js/datatables.js')}}" type="text/javascript"></script>
+
+
+<ul class="breadcrumb">
+    <li>
+        <p>La liste des utilisateurs</p>
+    </li>
+    <li><a href="#" class="active">CabineMedical</a> </li>
+</ul>
+
+<div class="row-fluid">
+    <div class="span12">
+        <div class="grid simple ">
+            <div class="grid-title">
+                <h4>Les <span class="semi-bold">utilisateurs</span></h4>
+                <div class="tools"> <a href="javascript:;" class="collapse"></a>
+                    <a href="#grid-config" data-toggle="modal" class="config"></a> 
+                </div>
+                <div class="grid-body ">
+                    <table class="table" id="example3" >
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Login</th>
+
+                               
+
+
+                                <th>Nom</th>
+                                
+                                <th>Cin</th>
+                                <th>Télephone</th>
+                              <th>Photo</th>
+
+                                <th>Roles</th>
+
+ <th>Choix Role</th>
+                                <th>Actions</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody> {% for entity in entities %}
+                            <tr class="odd gradeX">
+                                <td><i class="fa fa-plus-circle"></i></td> 
+                                <td><span class="label label-important">{{ entity.username }}</span></td>
+
+
+                             
+
+                                <td class="center">{{ entity.nom }} {{ entity.prenom }}</td>
+                                
+                                <td class="center">{{ entity.cin }}</td>
+                                <td class="center">{{ entity.phone }}</td>
+                                <td class="center"><img style= "border: 3px solid; color: #0aa699;" src="{{ asset("uploads/entities/") ~ entity.profilePicture  }} " alt="" width="70" height="50"></td>                         
+                                <td> {% for role in entity.roles %}
+                                                {% if role == 'ROLE_ADMIN' %}
+                                        <span class="label label-important">Admin</span><br>
+                                                {% elseif role == 'ROLE_MEDECIN' %}
+                                        <span class="label label-important">Medecin</span>
+                                         {% elseif role == 'ROLE_PATIENT' %}
+                                        <span class="label label-important">Patient</span>
+                                         {% elseif role == 'ROLE_SECRETAIRE' %}
+                                        <span class="label label-important">Secretaire</span>
+                                                {% endif %}  
+                                                {% endfor %}
+                                    </td>
+                                    <td> <select class="roles" data-id="{{ entity.id}}">
+                                            <option value="1" >admin</option>
+                                           <option value="2" >medecin</option>
+                                            <option value="3" >sécrtaire</option>
+                                            <option value="4" >patiant</option>
+
+                                            </select></td>
+
+                                    <td class="center"> 
+                                        <div class="visible-md visible-lg hidden-sm hidden-xs">
+
+                                            <a href="{{ path('user_edit', { 'id': entity.id }) }}" class="btn btn-xs  btn-warning"><i class="fa fa-edit"></i></a> 
+                                            <a href="{{ path('user_show', { 'id': entity.id }) }}" class="btn btn-xs   btn-primary "><i class="fa fa-share"></i></a> 
+                                            <a href="{{ path('user_deletee', { 'id': entity.id }) }}" class="btn btn-xs  btn-danger" ><i class="fa fa-times fa fa-white"></i></a> </div> 
+                                        
+                                            
+                                           
+                                            
+                                            
+
+                                     </td>
+
+                                    </tr>                                   
+                   {% endfor  %}
+                                </tbody>
+                            </table>
+                            <a href="{{ path('fos_user_registration_register') }}" data-color="rgb(255, 255, 255)" data-color-format="hex" id="cp4" class="btn btn-info my-colorpicker-control" href="#" data-colorpicker-guid="1"><i class="fa fa-plus-square">   Ajouter un utilisateur</i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <script>
+            $("#test2").remove();
+
+            
+            
+            $( ".roles" ).change(function() {
+value=$(this).val();
+id=$(this).attr("data-id");
+           // alert(id)
+           
+           
+           
+         //  var value = jQuery("#my_input").val();
+                    var url = "{{ path('updaterole', {'id': "id" ,'r' : "role" }) }}";
+                    url = url.replace("id", id); 
+                     url = url.replace("role", value); 
+window.location.href=url;
+
+           
+           
+            });
+            
+            
+            </script>
+
+ {% endblock content %}

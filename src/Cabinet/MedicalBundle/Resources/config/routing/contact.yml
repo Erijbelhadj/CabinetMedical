@@ -1,0 +1,38 @@
+contact:
+    pattern:  /
+    defaults: { _controller: "CabinetMedicalBundle:contact:index" }
+
+contact_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "CabinetMedicalBundle:contact:show" }
+
+contact_new:
+    pattern:  /new
+    defaults: { _controller: "CabinetMedicalBundle:contact:new" }
+contact_new2:
+    pattern:  /new2
+    defaults: { _controller: "CabinetMedicalBundle:contact:new2" }
+contact_create:
+    pattern:  /create
+    defaults: { _controller: "CabinetMedicalBundle:contact:create" }
+    requirements: { _method: post }
+contact_create2:
+    pattern:  /create2
+    defaults: { _controller: "CabinetMedicalBundle:contact:create2" }
+    requirements: { _method: post }
+contact_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "CabinetMedicalBundle:contact:edit" }
+
+contact_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "CabinetMedicalBundle:contact:update" }
+    requirements: { _method: post }
+
+contact_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "CabinetMedicalBundle:contact:delete" }
+    requirements: { _method: post }
+c_deleteee:
+    pattern:  /{id}/deletee
+    defaults: { _controller: "CabinetMedicalBundle:contact:deletee" }

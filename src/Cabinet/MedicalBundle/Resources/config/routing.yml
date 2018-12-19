@@ -1,0 +1,54 @@
+cabinet_medical_homepage:
+    pattern:  /
+    defaults: { _controller: CabinetMedicalBundle:Default:index }
+portfolio:
+    pattern:  /portfolio
+    defaults: { _controller: "CabinetMedicalBundle:Default:portfolio" }
+about:
+    pattern:  /about
+    defaults: { _controller: "CabinetMedicalBundle:Default:about" }
+services:
+    pattern:  /services
+    defaults: { _controller: "CabinetMedicalBundle:Default:services" }     
+admin:
+    pattern:  /admin
+    defaults: { _controller: CabinetMedicalBundle:Default:admin }    
+CabinetMedicalBundle_actualite:
+        resource: "@CabinetMedicalBundle/Resources/config/routing/actualite.yml"
+        prefix:   /actualite
+CabinetMedicalBundle_cabinet:
+        resource: "@CabinetMedicalBundle/Resources/config/routing/cabinet.yml"
+        prefix:   /cabinet
+CabinetMedicalBundle_contact:
+        resource: "@CabinetMedicalBundle/Resources/config/routing/contact.yml"
+        prefix:   /contact
+CabinetMedicalBundle_consultation:
+        resource: "@CabinetMedicalBundle/Resources/config/routing/consultation.yml"
+        prefix:   /consultation
+CabinetMedicalBundle_medecin:
+        resource: "@CabinetMedicalBundle/Resources/config/routing/medecin.yml"
+        prefix:   /medecin
+CabinetMedicalBundle_patient:
+        resource: "@CabinetMedicalBundle/Resources/config/routing/patient.yml"
+        prefix:   /patient
+CabinetMedicalBundle_rdv:
+        resource: "@CabinetMedicalBundle/Resources/config/routing/rdv.yml"
+        prefix:   /rdv 
+CabinetMedicalBundle_rigime:
+        resource: "@CabinetMedicalBundle/Resources/config/routing/rigime.yml"
+        prefix:   /rigime
+CabinetMedicalBundle_securite:
+        resource: "@CabinetMedicalBundle/Resources/config/routing/securite.yml"
+        prefix:   /securite
+CabinetMedicalBundle_prisecharge:
+        resource: "@CabinetMedicalBundle/Resources/config/routing/prisecharge.yml"
+        prefix:   /prisecharge 
+CabinetMedicalBundle_operationmed:
+        resource: "@CabinetMedicalBundle/Resources/config/routing/operationmed.yml"
+        prefix:   /operationmed
+CabinetMedicalBundle_user:
+        resource: "@CabinetMedicalBundle/Resources/config/routing/user.yml"
+        prefix:   /user        
+CabinetMedicalBundle_consultation:
+        resource: "@CabinetMedicalBundle/Resources/config/routing/consultation.yml"
+        prefix:   /consultation

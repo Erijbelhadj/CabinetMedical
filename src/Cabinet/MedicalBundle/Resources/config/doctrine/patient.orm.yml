@@ -1,0 +1,59 @@
+Cabinet\MedicalBundle\Entity\patient:
+    type: entity
+    table: null
+    repositoryClass: Cabinet\MedicalBundle\Entity\patientRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        codecnam:
+            type: string
+            length: 255
+        handicape:
+            type: text
+        antecedent:
+            type: text
+        chirgui:
+            type: text
+        allergie:
+            type: text
+        traitementencour:
+            type: text
+    oneToOne:
+     us:
+      targetEntity: User
+      inversedBy: pat
+      cascade: [ 'persist', 'remove' ]
+      joinColumn:
+        name: user_id
+        nullable: true
+        unique: true
+        referencedColumnName: id         
+    oneToMany:
+         consul:
+           targetEntity: consultation
+           mappedBy: patient
+           cascade: ["remove"]
+         sec:
+           targetEntity: securite
+           mappedBy: pat
+           cascade: ["remove"]
+         rdve:
+           targetEntity: rdv
+           mappedBy: patient
+           cascade: ["remove"]
+         opmed:
+           targetEntity: operationmed
+           mappedBy: pat
+           cascade: ["remove"]
+         rigime:
+           targetEntity: rigime
+           mappedBy: pat
+           cascade: ["remove"]
+         charge:
+           targetEntity: prisecharge
+           mappedBy: pat
+           cascade: ["remove"]
+    lifecycleCallbacks: {  }

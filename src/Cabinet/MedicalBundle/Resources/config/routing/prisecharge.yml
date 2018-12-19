@@ -1,0 +1,35 @@
+prisecharge:
+    pattern:  /
+    defaults: { _controller: "CabinetMedicalBundle:prisecharge:index" }
+
+prisecharge_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "CabinetMedicalBundle:prisecharge:show" }
+listecharge:
+    pattern:  /listecharge
+    defaults: { _controller: "CabinetMedicalBundle:prisecharge:liste" }
+prisecharge_new:
+    pattern:  /new
+    defaults: { _controller: "CabinetMedicalBundle:prisecharge:new" }
+
+prisecharge_create:
+    pattern:  /create
+    defaults: { _controller: "CabinetMedicalBundle:prisecharge:create" }
+    requirements: { _method: post }
+
+prisecharge_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "CabinetMedicalBundle:prisecharge:edit" }
+
+prisecharge_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "CabinetMedicalBundle:prisecharge:update" }
+    requirements: { _method: post }
+
+prisecharge_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "CabinetMedicalBundle:prisecharge:delete" }
+    requirements: { _method: post }
+prisecharge_deletee:
+    pattern:  /{id}/deletee
+    defaults: { _controller: "CabinetMedicalBundle:prisecharge:deletee" }

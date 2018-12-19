@@ -1,0 +1,33 @@
+cabinet:
+    pattern:  /
+    defaults: { _controller: "CabinetMedicalBundle:cabinet:index" }
+
+cabinet_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "CabinetMedicalBundle:cabinet:show" }
+
+cabinet_new:
+    pattern:  /new
+    defaults: { _controller: "CabinetMedicalBundle:cabinet:new" }
+
+cabinet_create:
+    pattern:  /create
+    defaults: { _controller: "CabinetMedicalBundle:cabinet:create" }
+    requirements: { _method: post }
+
+cabinet_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "CabinetMedicalBundle:cabinet:edit" }
+
+cabinet_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "CabinetMedicalBundle:cabinet:update" }
+    requirements: { _method: post }
+
+cabinet_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "CabinetMedicalBundle:cabinet:delete" }
+    requirements: { _method: post }
+cb_deletee:
+    pattern:  /{id}/deletee
+    defaults: { _controller: "CabinetMedicalBundle:cabinet:deletee" }

@@ -1,0 +1,42 @@
+Cabinet\MedicalBundle\Entity\medecin:
+    type: entity
+    table: null
+    repositoryClass: Cabinet\MedicalBundle\Entity\medecinRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        specialite:
+            type: string
+            length: 255
+        about:
+            type: text
+        code:
+            type: string
+            length: 255
+    oneToOne:
+     usm:
+      targetEntity: User
+      inversedBy: med
+      cascade: [ 'persist', 'remove' ]
+      joinColumn:
+        name: user_id
+        nullable: true
+        unique: true
+        referencedColumnName: id          
+    oneToMany:
+         consultation:
+           targetEntity: consultation
+           mappedBy: medecin
+           cascade: ["persist", "merge"]
+         rdv:
+           targetEntity: rdv
+           mappedBy: med
+           cascade: ["remove"]
+         opmedd:
+           targetEntity: operationmed
+           mappedBy: med
+           cascade: ["remove"]
+    lifecycleCallbacks: {  }

@@ -1,0 +1,35 @@
+rigime:
+    pattern:  /
+    defaults: { _controller: "CabinetMedicalBundle:rigime:index" }
+listerigime:
+    pattern:  /listerigime
+    defaults: { _controller: "CabinetMedicalBundle:rigime:liste" }
+rigime_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "CabinetMedicalBundle:rigime:show" }
+
+rigime_new:
+    pattern:  /new
+    defaults: { _controller: "CabinetMedicalBundle:rigime:new" }
+
+rigime_create:
+    pattern:  /create
+    defaults: { _controller: "CabinetMedicalBundle:rigime:create" }
+    requirements: { _method: post }
+
+rigime_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "CabinetMedicalBundle:rigime:edit" }
+
+rigime_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "CabinetMedicalBundle:rigime:update" }
+    requirements: { _method: post }
+
+rigime_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "CabinetMedicalBundle:rigime:delete" }
+    requirements: { _method: post }
+r_deletee:
+    pattern:  /{id}/deletee
+    defaults: { _controller: "CabinetMedicalBundle:rigime:deletee" }

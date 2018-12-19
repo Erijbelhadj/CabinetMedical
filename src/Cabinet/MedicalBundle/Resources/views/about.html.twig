@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hospice a Medical Category Flat bootstrap Responsive website Template | About :: w3layouts</title>
+<link href="{{asset('bundles/cabinetmedical/client/css/bootstrap.css')}}" type="text/css" rel="stylesheet" media="all">
+<link href="{{asset('bundles/cabinetmedical/client/css/style.css')}}" type="text/css" rel="stylesheet" media="all">
+<!--web-font-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<!--//web-font-->
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Hospice Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- //Custom Theme files -->
+<!-- js -->
+<script src="{{asset('bundles/cabinetmedical/client/js/jquery.min.js')}}"></script>
+<script src="{{asset('bundles/cabinetmedical/client/js/modernizr.custom.js')}}"></script>
+<!-- //js -->	
+<!-- start-smoth-scrolling-->
+<script type="text/javascript" src="{{asset('bundles/cabinetmedical/client/js/move-top.js')}}"></script>
+<script type="text/javascript" src="{{asset('bundles/cabinetmedical/client/js/easing.js')}}"></script>	
+<script type="text/javascript" src="{{asset('bundles/cabinetmedical/client/js/modernizr.custom.53451.js')}}"></script>
+<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+</script>
+<!--//end-smoth-scrolling-->
+</head>
+<body>
+	<!--header-->
+	<div class="header">
+		<div class="container">
+			<div class="top-middle">
+				<a href="index.html">
+					<h3>Hospice</h3>
+				</a>	
+			</div>
+			<div class="top-nav">
+				<span class="menu"><img src="{{asset('bundles/cabinetmedical/client/menu-icon.png')}}" alt=""/></span>		
+				<ul class="nav">
+                                    <br>
+                                   choisir votre type d'accée
+                                    <li><a href="{{ path('user_role', { 'role': 1 }) }}"> <h5>admin</h5><span class="badge badge-important animated bounceIn"></span></a>
+                                    </li>
+                                     <li><a href="{{ path('user_role', { 'role': 3 }) }}"> <h5>secretaire</h5><span class="badge badge-important animated bounceIn"></span></a>
+                                    </li>
+                                     <li><a href="{{ path('user_role', { 'role': 2 }) }}"><h5>medecin</h5><span class="badge badge-important animated bounceIn"></span></a>
+                                    </li>
+                                     <li><a href="{{ path('user_role', { 'role': 4 }) }}"><h5> patient</h5><span class="badge badge-important animated bounceIn"></span></a>
+                                    </li>
+                                    </ul>
+                                    <br>
+                                    <ul class="nav1">
+					<li><a href="{{ path('cabinet_medical_homepage') }}" >Home</a></li>
+					<li><a href="{{ path('about') }}" class="active">Apropos</a></li>
+					
+					<li><a href="{{ path('portfolio') }}">Portfolio</a></li>
+					<li><a href="{{ path('contact_new2') }}" >Contactez Nous</a></li>
+                                        
+					<li>  {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+   <a href="{{ path('fos_user_security_logout') }}"> Deconnexion</a> {% endif %}   </li>
+                                        </ul>
+				
+				<!-- script-for-menu -->
+				 <script>
+				   $( "span.menu" ).click(function() {
+					 $( "ul.nav1" ).slideToggle( 300, function() {
+					 // Animation complete.
+					  });
+					 });
+				</script>
+				<!-- /script-for-menu -->
+			</div>	
+			<div class="clearfix"> </div>
+		</div>	
+	</div>
+	<!--//header-->
+	<!--about-->
+	<div class="about">
+		<div class="container">
+			<div class="work-title">
+				<h3>ABOUT<span>US</span></h3>
+			</div>
+			<div class="about-text">
+				<div class="col-md-4 about-text-left">
+					<img src="{{asset('bundles/cabinetmedical/client/images/img14.jpg')}}"alt=""/>
+				</div>
+				<div class="col-md-8 about-text-right">
+					<h4>Cabinets </h4>
+					<p>L’augmentation des frais de gestion, la spécialisation des pratiques et le désir de proposer
+les services de santé les plus complets aux patients a favorisé le développement de cabinets
+médicaux structurés, soit sous forme de très grands cabinets, soit sous forme de réseaux de
+médecins de famille.</p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="work-title">
+				<h3>Notre<span>Equipe</span></h3>
+			</div>
+			<div class="about-team">
+				<div class="col-md-3 about-team-grids">
+					<img src="{{asset('bundles/cabinetmedical/client/images/img15.jpg')}}" alt=""/>
+					<div class="team-text">
+						<h4><a href="#">Mehdi</a> Abdelaziz</h4>
+						<p>Professionnel central du monde de la santé le médecin examine, établit un diagnostic, ordonne des examens et prescrit le traitement pharmaceutique ou hospitalier qui s'impose. Il suit ses malades et gère leur santé dans sa globalité. Il y a des médecins généralistes et des médecins spécialistes d'une pathologie.</p>
+					</div>
+				</div>
+				<div class=" col-md-3 about-team-grids">
+					<img src="{{asset('bundles/cabinetmedical/client/images/img16.jpg')}}" alt=""/>
+					<div class="team-text">
+						<h4><a href="#">Zouari Afif</a>pédiatre</h4>
+						<p>Spécialisé en pédiatrie, il est engagé pour la protection du développement du petit de l’homme. Il participe à la création du service de réanimation des nouveaux-nés à Port-Royal et introduit la réanimation à l’Institut de Puériculture de Paris. Diplômé de psychopathologie de l’enfant,.</p>
+					</div>
+				</div>
+				<div class="col-md-3 about-team-grids">
+					<img src="{{asset('bundles/cabinetmedical/client/images/img17.jpg')}}" alt=""/>
+					<div class="team-text">
+						<h4><a href="#">Jlassi Riadh </a> géneraliste </h4>				
+						<p>médecin géneral convenconé avec le CNAM ,diplomé de la faculté de médecine Tunis ,ancien proffesseur inversitaire à faculté de médecine a Lyon France</p>
+					</div>
+				</div>
+				<div class="col-md-3 about-team-grids">
+					<img src="{{asset('bundles/cabinetmedical/client/images/img18.jpg')}}" alt=""/>
+					<div class="team-text">
+						<h4><a href="#">Faten hadj Said</a> Dentiste</h4>
+						<p>Spécialiste en medecine dentaire , diplomé de la faculté de médecine dentaire a Monastir.</p>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<div class="about-skills">
+		<div class="container">
+			<div class="work-title">
+				<h3>Pour quoi<span>Vous choisiez nous</span></h3>
+			</div>
+			<div class="about-choose">
+				<div class="col-md-4 about-choose-info">
+					<h4>bientôt un accès sécurisé à votre dossier médical en ligne</h4>
+					
+                                        <p class="about-pgh"> Nous travaillons à la mise à disposition de votre dossier médical en ligne, via un portail sécurisé. Vous pourrez ainsi accéder à toutes les informations vous concernant.    </p>
+				</div>
+				<div class="col-md-4 about-choose-info">
+					
+                                        <h4>des horaires de consultation étendus </h4>
+6 jours sur 7</h5>
+                                        <p class="about-pgh">     Les médecins généralistes se relaient pour assurer une bonne continuité des soins. Nous sommes ouverts de 7h à 23h en semaine, et de 10h à 18h le samedi et les jours fériés. </p>
+				
+	</div>
+	<!--//about-->	
+	<!--footer-->
+	<div class="footer">
+		<div class="container">
+			<div class="footer-left">
+				<a href="index.html">CabinetMédical</a>
+			</div>
+			<div class="footer-right">
+				<p>© 2015 All rights reserved | Template by <a href="http://w3layouts.com/"> W3layouts</a></p>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<!--//footer-->
+	<!--smooth-scrolling-of-move-up-->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				/*
+				var defaults = {
+					containerID: 'toTop', // fading element id
+					containerHoverID: 'toTopHover', // fading element hover id
+					scrollSpeed: 1200,
+					easingType: 'linear' 
+				};
+				*/
+				
+				$().UItoTop({ easingType: 'easeOutQuart' });
+				
+			});
+		</script>
+		<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	<!--//smooth-scrolling-of-move-up-->
+</body>
+</html>	

@@ -1,0 +1,35 @@
+securite:
+    pattern:  /
+    defaults: { _controller: "CabinetMedicalBundle:securite:index" }
+listesec:
+    pattern:  /listesec
+    defaults: { _controller: "CabinetMedicalBundle:securite:liste" }
+securite_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "CabinetMedicalBundle:securite:show" }
+
+securite_new:
+    pattern:  /new
+    defaults: { _controller: "CabinetMedicalBundle:securite:new" }
+
+securite_create:
+    pattern:  /create
+    defaults: { _controller: "CabinetMedicalBundle:securite:create" }
+    requirements: { _method: post }
+
+securite_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "CabinetMedicalBundle:securite:edit" }
+
+securite_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "CabinetMedicalBundle:securite:update" }
+    requirements: { _method: post }
+
+securite_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "CabinetMedicalBundle:securite:delete" }
+    requirements: { _method: post }
+s_deletee:
+    pattern:  /{id}/deletee
+    defaults: { _controller: "CabinetMedicalBundle:securite:deletee" }

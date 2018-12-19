@@ -1,0 +1,41 @@
+user:
+    pattern:  /
+    defaults: { _controller: "CabinetMedicalBundle:User:index" }
+
+user_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "CabinetMedicalBundle:User:show" }
+user_role:
+    pattern:  /{role}/role
+    defaults: { _controller: "CabinetMedicalBundle:User:role" }
+checkrole: 
+    pattern:  /checkrole
+    defaults: { _controller: "CabinetMedicalBundle:User:checkrole" }
+updaterole:
+    pattern:  /{id}/{r}/updaterole
+    defaults: { _controller: "CabinetMedicalBundle:User:roleedit" } 
+user_new:
+    pattern:  /new
+    defaults: { _controller: "CabinetMedicalBundle:User:new" }
+
+user_create:
+    pattern:  /create
+    defaults: { _controller: "CabinetMedicalBundle:User:create" }
+    requirements: { _method: post }
+
+user_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "CabinetMedicalBundle:User:edit" }
+
+user_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "CabinetMedicalBundle:User:update" }
+    requirements: { _method: post }
+
+user_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "CabinetMedicalBundle:User:delete" }
+    requirements: { _method: post }
+user_deletee:
+    pattern:  /{id}/delete
+    defaults: { _controller: "CabinetMedicalBundle:User:deletee" }

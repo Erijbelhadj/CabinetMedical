@@ -1,0 +1,195 @@
+<?php
+
+namespace Cabinet\MedicalBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * operationmed
+ */
+class operationmed
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     */
+    private $date;
+
+    /**
+     * @var float
+     */
+    private $montant;
+
+    /**
+     * @var \Cabinet\MedicalBundle\Entity\patient
+     */
+    private $pat;
+
+    /**
+     * @var \Cabinet\MedicalBundle\Entity\medecin
+     */
+    private $med;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     * @return operationmed
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+    
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime 
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Set montant
+     *
+     * @param float $montant
+     * @return operationmed
+     */
+    public function setMontant($montant)
+    {
+        $this->montant = $montant;
+    
+        return $this;
+    }
+
+    /**
+     * Get montant
+     *
+     * @return float 
+     */
+    public function getMontant()
+    {
+        return $this->montant;
+    }
+
+    /**
+     * Set pat
+     *
+     * @param \Cabinet\MedicalBundle\Entity\patient $pat
+     * @return operationmed
+     */
+    public function setPat(\Cabinet\MedicalBundle\Entity\patient $pat = null)
+    {
+        $this->pat = $pat;
+    
+        return $this;
+    }
+
+    /**
+     * Get pat
+     *
+     * @return \Cabinet\MedicalBundle\Entity\patient 
+     */
+    public function getPat()
+    {
+        return $this->pat;
+    }
+
+    /**
+     * Set med
+     *
+     * @param \Cabinet\MedicalBundle\Entity\medecin $med
+     * @return operationmed
+     */
+    public function setMed(\Cabinet\MedicalBundle\Entity\medecin $med = null)
+    {
+        $this->med = $med;
+    
+        return $this;
+    }
+
+    /**
+     * Get med
+     *
+     * @return \Cabinet\MedicalBundle\Entity\medecin 
+     */
+    public function getMed()
+    {
+        return $this->med;
+    }
+    /**
+     * @var \Cabinet\MedicalBundle\Entity\User
+     */
+    private $user;
+
+
+    /**
+     * Set user
+     *
+     * @param \Cabinet\MedicalBundle\Entity\User $user
+     * @return operationmed
+     */
+    public function setUser(\Cabinet\MedicalBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+    
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Cabinet\MedicalBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+    /**
+     * @var \Cabinet\MedicalBundle\Entity\cabinet
+     */
+    private $cabinet;
+
+
+    /**
+     * Set cabinet
+     *
+     * @param \Cabinet\MedicalBundle\Entity\cabinet $cabinet
+     * @return operationmed
+     */
+    public function setCabinet(\Cabinet\MedicalBundle\Entity\cabinet $cabinet = null)
+    {
+        $this->cabinet = $cabinet;
+    
+        return $this;
+    }
+
+    /**
+     * Get cabinet
+     *
+     * @return \Cabinet\MedicalBundle\Entity\cabinet 
+     */
+    public function getCabinet()
+    {
+        return $this->cabinet;
+    }
+}

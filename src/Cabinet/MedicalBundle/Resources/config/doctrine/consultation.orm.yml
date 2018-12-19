@@ -1,0 +1,49 @@
+Cabinet\MedicalBundle\Entity\consultation:
+    type: entity
+    table: null
+    repositoryClass: Cabinet\MedicalBundle\Entity\consultationRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        name:
+            type: string
+            length: 255
+        traitement:
+            type: text
+        type:
+            type: string
+            length: 255
+        date:
+            type: datetime
+        conclusion:
+            type: text
+    manyToOne:
+         medecin:
+           targetEntity: medecin
+           inversedBy: consultation
+           cascade: ["remove"]
+           joinColumn:
+            name: med_id
+            referencedColumnName: id
+         patient:
+           targetEntity: patient
+           inversedBy: consul
+           joinColumn:
+            name: patient_id
+            referencedColumnName: id
+         cabinetc:
+           targetEntity: cabinet
+           inversedBy: consultationcab
+           joinColumn:
+            name: cab_id
+            referencedColumnName: id    
+         user:
+           targetEntity: User
+           inversedBy: consulu
+           joinColumn:
+            name: user_id
+            referencedColumnName: id     
+    lifecycleCallbacks: {  }

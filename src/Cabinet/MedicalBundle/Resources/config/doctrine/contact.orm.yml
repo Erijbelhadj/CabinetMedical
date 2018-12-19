@@ -1,0 +1,32 @@
+Cabinet\MedicalBundle\Entity\contact:
+    type: entity
+    table: null
+    repositoryClass: Cabinet\MedicalBundle\Entity\contactRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        nom:
+            type: string
+            length: 255
+        mail:
+            type: string
+            length: 255
+        msg:
+            type: text
+        tel:
+            type: string
+            length: 255
+        date:
+            type: datetime
+    manyToOne:
+         user3:
+           targetEntity: User
+           inversedBy: contact
+           joinColumn:
+            name: User_id
+            referencedColumnName: id
+            
+    lifecycleCallbacks: {  }

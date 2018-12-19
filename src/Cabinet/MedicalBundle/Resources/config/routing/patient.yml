@@ -1,0 +1,33 @@
+patient:
+    pattern:  /
+    defaults: { _controller: "CabinetMedicalBundle:patient:index" }
+
+patient_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "CabinetMedicalBundle:patient:show" }
+
+patient_new:
+    pattern:  /new
+    defaults: { _controller: "CabinetMedicalBundle:patient:new" }
+
+patient_create:
+    pattern:  /create
+    defaults: { _controller: "CabinetMedicalBundle:patient:create" }
+    requirements: { _method: post }
+
+patient_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "CabinetMedicalBundle:patient:edit" }
+
+patient_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "CabinetMedicalBundle:patient:update" }
+    requirements: { _method: post }
+
+patient_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "CabinetMedicalBundle:patient:delete" }
+    requirements: { _method: post }
+deleteee:
+    pattern:  /{id}/deletee
+    defaults: { _controller: "CabinetMedicalBundle:patient:deletee" }

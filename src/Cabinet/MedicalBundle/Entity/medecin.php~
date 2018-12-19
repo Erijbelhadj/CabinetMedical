@@ -1,0 +1,265 @@
+<?php
+
+namespace Cabinet\MedicalBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * medecin
+ */
+class medecin
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $specialite;
+
+    /**
+     * @var string
+     */
+    private $about;
+
+    /**
+     * @var string
+     */
+    private $code;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $consultation;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $rdv;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $opmedd;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->consultation = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->rdv = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->opmedd = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set specialite
+     *
+     * @param string $specialite
+     * @return medecin
+     */
+    public function setSpecialite($specialite)
+    {
+        $this->specialite = $specialite;
+    
+        return $this;
+    }
+
+    /**
+     * Get specialite
+     *
+     * @return string 
+     */
+    public function getSpecialite()
+    {
+        return $this->specialite;
+    }
+
+    /**
+     * Set about
+     *
+     * @param string $about
+     * @return medecin
+     */
+    public function setAbout($about)
+    {
+        $this->about = $about;
+    
+        return $this;
+    }
+
+    /**
+     * Get about
+     *
+     * @return string 
+     */
+    public function getAbout()
+    {
+        return $this->about;
+    }
+
+    /**
+     * Set code
+     *
+     * @param string $code
+     * @return medecin
+     */
+    public function setCode($code)
+    {
+        $this->code = $code;
+    
+        return $this;
+    }
+
+    /**
+     * Get code
+     *
+     * @return string 
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * Add consultation
+     *
+     * @param \Cabinet\MedicalBundle\Entity\consultation $consultation
+     * @return medecin
+     */
+    public function addConsultation(\Cabinet\MedicalBundle\Entity\consultation $consultation)
+    {
+        $this->consultation[] = $consultation;
+    
+        return $this;
+    }
+
+    /**
+     * Remove consultation
+     *
+     * @param \Cabinet\MedicalBundle\Entity\consultation $consultation
+     */
+    public function removeConsultation(\Cabinet\MedicalBundle\Entity\consultation $consultation)
+    {
+        $this->consultation->removeElement($consultation);
+    }
+
+    /**
+     * Get consultation
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getConsultation()
+    {
+        return $this->consultation;
+    }
+
+    /**
+     * Add rdv
+     *
+     * @param \Cabinet\MedicalBundle\Entity\rdv $rdv
+     * @return medecin
+     */
+    public function addRdv(\Cabinet\MedicalBundle\Entity\rdv $rdv)
+    {
+        $this->rdv[] = $rdv;
+    
+        return $this;
+    }
+
+    /**
+     * Remove rdv
+     *
+     * @param \Cabinet\MedicalBundle\Entity\rdv $rdv
+     */
+    public function removeRdv(\Cabinet\MedicalBundle\Entity\rdv $rdv)
+    {
+        $this->rdv->removeElement($rdv);
+    }
+
+    /**
+     * Get rdv
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getRdv()
+    {
+        return $this->rdv;
+    }
+
+    /**
+     * Add opmedd
+     *
+     * @param \Cabinet\MedicalBundle\Entity\operationmed $opmedd
+     * @return medecin
+     */
+    public function addOpmedd(\Cabinet\MedicalBundle\Entity\operationmed $opmedd)
+    {
+        $this->opmedd[] = $opmedd;
+    
+        return $this;
+    }
+
+    /**
+     * Remove opmedd
+     *
+     * @param \Cabinet\MedicalBundle\Entity\operationmed $opmedd
+     */
+    public function removeOpmedd(\Cabinet\MedicalBundle\Entity\operationmed $opmedd)
+    {
+        $this->opmedd->removeElement($opmedd);
+    }
+
+    /**
+     * Get opmedd
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getOpmedd()
+    {
+        return $this->opmedd;
+    }
+    public function __toString() {
+        return $this->code;
+    }
+    /**
+     * @var \Cabinet\MedicalBundle\Entity\User
+     */
+    private $usm;
+
+
+    /**
+     * Set usm
+     *
+     * @param \Cabinet\MedicalBundle\Entity\User $usm
+     * @return medecin
+     */
+    public function setUsm(\Cabinet\MedicalBundle\Entity\User $usm = null)
+    {
+        $this->usm = $usm;
+    
+        return $this;
+    }
+
+    /**
+     * Get usm
+     *
+     * @return \Cabinet\MedicalBundle\Entity\User 
+     */
+    public function getUsm()
+    {
+        return $this->usm;
+    }
+}

@@ -1,0 +1,41 @@
+Cabinet\MedicalBundle\Entity\securite:
+    type: entity
+    table: null
+    repositoryClass: Cabinet\MedicalBundle\Entity\securiteRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        type:
+            type: string
+            length: 255
+        datedebut:
+            type: datetime
+        datefin:
+            type: datetime
+     
+    oneToMany:
+         cabin:
+           targetEntity: cabinet
+           mappedBy: securite
+           cascade: ["remove"]
+         rigimem:
+           targetEntity: rigime
+           mappedBy: sec
+           cascade: ["remove"]
+    manyToOne:
+         pat:
+           targetEntity: patient
+           inversedBy: sec
+           joinColumn:
+            name: patient_id
+            referencedColumnName: id
+         user:
+           targetEntity: User
+           inversedBy: secuser
+           joinColumn:
+            name: user_id
+            referencedColumnName: id          
+    lifecycleCallbacks: {  }

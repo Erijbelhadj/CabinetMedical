@@ -1,0 +1,31 @@
+Cabinet\MedicalBundle\Entity\prisecharge:
+    type: entity
+    table: null
+    repositoryClass: Cabinet\MedicalBundle\Entity\prisechargeRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        titre:
+            type: string
+            length: 255
+        dateprise:
+            type: datetime
+        nom:
+            type: string
+            length: 255
+        prenom:
+            type: string
+            length: 255
+        datenaiss:
+            type: date
+    manyToOne:
+         pat:
+           targetEntity: patient
+           inversedBy: charge
+           joinColumn:
+            name: patient_id
+            referencedColumnName: id         
+    lifecycleCallbacks: {  }

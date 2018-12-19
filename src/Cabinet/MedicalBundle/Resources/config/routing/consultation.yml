@@ -1,0 +1,41 @@
+consultation:
+    pattern:  /
+    defaults: { _controller: "CabinetMedicalBundle:consultation:index" }
+listeconsultation:
+    pattern:  /listeconsultation
+    defaults: { _controller: "CabinetMedicalBundle:consultation:liste" }
+consultation_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "CabinetMedicalBundle:consultation:show" }
+
+consultation_new:
+    pattern:  /new
+    defaults: { _controller: "CabinetMedicalBundle:consultation:new" }
+
+consultation_create:
+    pattern:  /create
+    defaults: { _controller: "CabinetMedicalBundle:consultation:create" }
+    requirements: { _method: post }
+
+consultation_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "CabinetMedicalBundle:consultation:edit" }
+
+consultation_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "CabinetMedicalBundle:consultation:update" }
+    requirements: { _method: post }
+    
+    
+    
+consultation_liste:
+    pattern:  /liste
+    defaults: { _controller: "CabinetMedicalBundle:consultation:liste" } 
+
+consultation_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "CabinetMedicalBundle:consultation:delete" }
+    requirements: { _method: post }
+con_deletee:
+    pattern:  /{id}/deletee
+    defaults: { _controller: "CabinetMedicalBundle:consultation:deletee" }

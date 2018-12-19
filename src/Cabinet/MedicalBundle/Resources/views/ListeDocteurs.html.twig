@@ -1,0 +1,31 @@
+{% extends "CabinetMedicalBundle::layout.html.twig"%}
+
+
+
+
+{% block content %}
+
+    <div class="container">
+         <div class="work-title">
+                    <h3>Liste<span>des Docteurs</span></h3>
+                </div>
+       
+       <table id="tablelist" border="2">
+   <tr>
+       <td><h4>Specialite</h4></td> 
+       <td><h4>About</h4></td> 
+       <td><h4>Code</h4></td> 
+   </tr>
+
+   {%for medecin in medecins%}
+      <tr>
+          <td><p>{{medecin.specialite}}</p></td> 
+          <td><p>{{medecin.about}}</p></td> 
+          <td><p>{{medecin.code}}</p></td>
+
+      </tr>
+   {%endfor%}
+</table>
+   
+    </div>
+{% endblock %} 

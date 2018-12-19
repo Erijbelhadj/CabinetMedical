@@ -1,0 +1,33 @@
+Cabinet\MedicalBundle\Entity\rigime:
+    type: entity
+    table: null
+    repositoryClass: Cabinet\MedicalBundle\Entity\rigimeRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        libelle:
+            type: string
+            length: 255
+    manyToOne:
+         pat:
+           targetEntity: patient
+           inversedBy: rigime
+           joinColumn:
+            name: patient_id
+            referencedColumnName: id 
+         sec:
+           targetEntity: securite
+           inversedBy: rigimem
+           joinColumn:
+            name: sec
+            referencedColumnName: id
+         user:
+           targetEntity: User
+           inversedBy: rigimuser
+           joinColumn:
+            name: user_id
+            referencedColumnName: id    
+    lifecycleCallbacks: {  }

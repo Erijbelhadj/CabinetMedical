@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/wamp/www/Cabinet/src/Cabinet/MedicalBundle/Resources/views/consultation/listemed.html.twig</file>
+            <file>file:/C:/wamp/www/Cabinet/src/Cabinet/MedicalBundle/Resources/config/routing/contact.yml</file>
+            <file>file:/C:/wamp/www/Cabinet/src/Cabinet/MedicalBundle/Resources/config/routing/user.yml</file>
+            <file>file:/C:/wamp/www/Cabinet/src/Cabinet/MedicalBundle/Resources/config/routing/cabinet.yml</file>
+            <file>file:/C:/wamp/www/Cabinet/src/Cabinet/MedicalBundle/Resources/config/routing/operationmed.yml</file>
+            <file>file:/C:/wamp/www/Cabinet/src/Cabinet/MedicalBundle/Resources/views/adminTemplate.html.twig</file>
+            <file>file:/C:/wamp/www/Cabinet/src/Cabinet/MedicalBundle/Resources/views/rdv/listemed.html.twig</file>
+            <file>file:/C:/wamp/www/Cabinet/src/Cabinet/MedicalBundle/Resources/config/routing/securite.yml</file>
+            <file>file:/C:/wamp/www/Cabinet/src/Cabinet/MedicalBundle/Resources/config/routing/actualite.yml</file>
+        </group>
+    </open-files>
+</project-private>
